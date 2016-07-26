@@ -7,7 +7,7 @@ function init(model) {
         var options = this.state.options || {},
             primaryKey = model.primaryKeyAttribute;
             
-        options[primaryKey] = this.request.params[primaryKey];
+        options[primaryKey] = this.params[primaryKey];
         
         var result = yield model.findOne(options);
 
