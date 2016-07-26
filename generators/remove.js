@@ -7,7 +7,8 @@ function init(model) {
         var options = this.state.options || {},
             primaryKey = model.primaryKeyAttribute;
             
-        options[primaryKey] = this.params[primaryKey];
+        options.where = options.where || {};
+        options.where[primaryKey] = this.params[primaryKey];
         
         var result = yield model.findOne(options);
         
